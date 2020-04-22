@@ -4,12 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.android.roomsimpsonsmarvel.model.Movie
 import com.example.android.roomsimpsonsmarvel.model.Person
 
-@Database(entities = arrayOf(Person::class), version = 1)
+@Database(entities = arrayOf(Person::class, Movie::class), version = 2)
 abstract class SimpsonsMarvelDatabase : RoomDatabase() {
 
     abstract fun personDao(): PersonDao
+    abstract fun movieDao(): MovieDao
 
     companion object {
 
